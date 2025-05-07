@@ -38,61 +38,60 @@
             background: linear-gradient(45deg, #3b3b3b, #111);
         }
 
-        /* Custom CSS for dynamic layout */
+        /* Custom styles */
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .card:hover {
-            transform: translateY(-10px) scale(1.05);
+            transform: translateY(-15px) scale(1.05);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
+        /* About Section Styles */
+        .about-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .about-img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Shape for visual accents */
         .shape {
             position: absolute;
-            width: 50%;
-            height: 50%;
-            background-color: #ff0000;
-            clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
-            transform: rotate(-10deg);
+            width: 70%;
+            height: 70%;
+            background-color: #fff;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+            top: -10%;
+            left: 15%;
+            opacity: 0.1;
         }
 
         .shape-two {
             position: absolute;
-            width: 50%;
-            height: 50%;
-            background-color: #00c2ff;
-            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
-            transform: rotate(15deg);
-            right: 0;
+            width: 60%;
+            height: 60%;
+            background-color: #fff;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
             top: 50%;
-        }
-
-        /* Hero Section styles */
-        .hero {
-            background: linear-gradient(135deg, #00c2ff, #00ffdd);
-            color: white;
-            position: relative;
-        }
-
-        .hero-text {
-            z-index: 2;
-        }
-
-        .hero .shape,
-        .hero .shape-two {
-            opacity: 0.5;
+            right: -10%;
+            opacity: 0.15;
         }
     </style>
 </head>
 <body class="bg-white text-black transition-colors duration-500">
     <!-- Hero Section -->
-    <section id="hero" class="hero relative h-screen flex justify-center items-center text-center px-6 py-12">
+    <section id="hero" class="hero relative h-screen flex justify-center items-center text-center px-6 py-12 bg-gradient-to-r from-black to-gray-900">
         <div class="shape"></div>
         <div class="shape-two"></div>
-        <div class="hero-text relative z-10">
+        <div class="relative z-10 text-white">
             <h1 class="text-5xl font-extrabold mb-4 animate__animated animate__fadeIn">Muhamad Farhansyah</h1>
-            <p class="text-xl mb-4 animate__animated animate__fadeIn animate__delay-1s">An IT Support & Network Technician</p>
+            <p class="text-xl mb-4 animate__animated animate__fadeIn animate__delay-1s">IT Support & Network Technician</p>
             <a href="#about" class="text-xl font-semibold bg-teal-500 hover:bg-teal-600 text-white py-3 px-6 rounded-full transition-all duration-300">Explore My Work</a>
         </div>
     </section>
@@ -100,45 +99,43 @@
     <!-- About Section -->
     <section id="about" class="py-20 px-8 bg-gray-100 dark:bg-gray-900 relative">
         <h2 class="text-3xl font-semibold text-center mb-8">About Me</h2>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
-            <div class="max-w-md text-center sm:text-left">
-                <p class="text-lg text-gray-700 dark:text-gray-300">With a background in Information Systems, I've honed my skills in IT support, network troubleshooting, and data management. Over 4 years of experience in the field, I constantly strive to improve and innovate.</p>
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
+            <div class="lg:w-1/2 w-full text-center lg:text-left">
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                    Hi, I'm Muhamad Farhansyah. I have a background in **Information Systems** from Universitas Pamulang, and I have spent the past 4 years working as an IT Support/Computer & Network Technician, as well as teaching ICT and Social Studies. 
+                </p>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                    I am passionate about technology, especially in networking, system troubleshooting, and IT management. I also enjoy teaching and sharing my knowledge with others, which has helped me grow both personally and professionally.
+                </p>
+                <p class="text-lg text-gray-700 dark:text-gray-300">
+                    I am always looking for new challenges and opportunities to improve my skills. Whether it's solving complex network issues or helping individuals understand technology, I thrive in environments where I can learn and grow.
+                </p>
             </div>
-            <div class="relative w-48 h-48 rounded-full overflow-hidden border-4 border-teal-500 shadow-lg transform hover:scale-105 transition-all duration-300">
-                <img src="https://via.placeholder.com/200" alt="Muhamad Farhansyah" class="w-full h-full object-cover">
+            <div class="relative w-48 h-48 rounded-full overflow-hidden border-4 border-teal-500 shadow-lg transform hover:scale-105 transition-all duration-300 mt-8 lg:mt-0">
+                <img src="https://via.placeholder.com/200" alt="Muhamad Farhansyah" class="about-img">
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- My Projects Section -->
     <section id="projects" class="py-20 px-8 bg-white dark:bg-gray-800">
         <h2 class="text-3xl font-semibold text-center mb-8">My Projects</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="card bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-xl relative overflow-hidden">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div class="card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-xl relative overflow-hidden">
                 <h3 class="text-xl font-semibold mb-4">Project 1</h3>
-                <p class="text-gray-700 dark:text-gray-300">An IT infrastructure setup for a local business. I designed and implemented the network and security systems.</p>
+                <p class="text-gray-700 dark:text-gray-300">This project focused on setting up a secure IT infrastructure for a local business. I handled everything from the network setup to configuring firewalls and ensuring secure communications.</p>
                 <div class="absolute inset-0 bg-teal-500 opacity-25"></div>
             </div>
-            <div class="card bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-xl relative overflow-hidden">
+            <div class="card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-xl relative overflow-hidden">
                 <h3 class="text-xl font-semibold mb-4">Project 2</h3>
-                <p class="text-gray-700 dark:text-gray-300">A project where I created a custom system for inventory management that integrates with cloud storage solutions.</p>
+                <p class="text-gray-700 dark:text-gray-300">A complete system setup for a cloud-based inventory management system, ensuring smooth data flow and reliable backups. The system integrates with multiple cloud storage platforms.</p>
                 <div class="absolute inset-0 bg-teal-500 opacity-25"></div>
             </div>
-            <div class="card bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-xl relative overflow-hidden">
+            <div class="card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-xl relative overflow-hidden">
                 <h3 class="text-xl font-semibold mb-4">Project 3</h3>
-                <p class="text-gray-700 dark:text-gray-300">I developed a web-based application for managing online courses and digital classrooms for educational purposes.</p>
+                <p class="text-gray-700 dark:text-gray-300">Created a custom web application to help teachers manage digital classrooms, handle assignments, and monitor student progress. Integrated with various tools for easy content creation.</p>
                 <div class="absolute inset-0 bg-teal-500 opacity-25"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-8 bg-gray-100 dark:bg-gray-900">
-        <h2 class="text-3xl font-semibold text-center mb-8">Contact</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 text-center mb-8">Feel free to get in touch for inquiries, collaborations, or opportunities!</p>
-        <div class="text-center">
-            <p>Email: <a href="mailto:Farhansyah2828@gmail.com" class="text-teal-500">Farhansyah2828@gmail.com</a></p>
-            <p>Phone: <a href="tel:+6285710255201" class="text-teal-500">0857-1025-5201</a></p>
         </div>
     </section>
 
@@ -146,5 +143,6 @@
     <footer class="py-6 bg-gray-900 text-center text-gray-500">
         <p>&copy; 2025 Muhamad Farhansyah</p>
     </footer>
+
 </body>
 </html>
