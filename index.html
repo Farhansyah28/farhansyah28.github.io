@@ -37,65 +37,106 @@
         .dark .hero {
             background: linear-gradient(45deg, #3b3b3b, #111);
         }
+
+        /* Custom CSS for dynamic layout */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .shape {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-color: #ff0000;
+            clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 100%);
+            transform: rotate(-10deg);
+        }
+
+        .shape-two {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-color: #00c2ff;
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+            transform: rotate(15deg);
+            right: 0;
+            top: 50%;
+        }
+
+        /* Hero Section styles */
+        .hero {
+            background: linear-gradient(135deg, #00c2ff, #00ffdd);
+            color: white;
+            position: relative;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .hero .shape,
+        .hero .shape-two {
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body class="bg-white text-black transition-colors duration-500">
-    <!-- Header -->
-    <header class="flex justify-between items-center p-6 border-b-2">
-        <div class="font-bold text-xl">Farhansyah</div>
-        <nav>
-            <ul class="flex space-x-6">
-                <li><a href="#about" class="hover:text-teal-500">About</a></li>
-                <li><a href="#projects" class="hover:text-teal-500">Projects</a></li>
-                <li><a href="#contact" class="hover:text-teal-500">Contact</a></li>
-            </ul>
-        </nav>
-        <button onclick="toggleDarkMode()" class="text-xl">
-            🌙 / 🌞
-        </button>
-    </header>
-
     <!-- Hero Section -->
-    <section id="hero" class="hero h-screen flex items-center justify-center text-center text-white bg-cover bg-fixed bg-center relative" style="background-image: url('https://via.placeholder.com/1500');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="relative z-10 px-4 md:px-8">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 animate__animated animate__fadeIn">Welcome to My Portfolio</h1>
-            <p class="text-lg md:text-xl animate__animated animate__fadeIn animate__delay-1s">I am Muhamad Farhansyah, an IT Support & Network Technician</p>
+    <section id="hero" class="hero relative h-screen flex justify-center items-center text-center px-6 py-12">
+        <div class="shape"></div>
+        <div class="shape-two"></div>
+        <div class="hero-text relative z-10">
+            <h1 class="text-5xl font-extrabold mb-4 animate__animated animate__fadeIn">Muhamad Farhansyah</h1>
+            <p class="text-xl mb-4 animate__animated animate__fadeIn animate__delay-1s">An IT Support & Network Technician</p>
+            <a href="#about" class="text-xl font-semibold bg-teal-500 hover:bg-teal-600 text-white py-3 px-6 rounded-full transition-all duration-300">Explore My Work</a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
-        <div class="text-center">
-            <h2 class="text-3xl font-semibold mb-8">About Me</h2>
-            <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">I have a background in Information Systems and over 4 years of experience in IT support, computer & network troubleshooting, and teaching. I am passionate about technology and always looking for opportunities to learn and grow in the IT field.</p>
+    <section id="about" class="py-20 px-8 bg-gray-100 dark:bg-gray-900 relative">
+        <h2 class="text-3xl font-semibold text-center mb-8">About Me</h2>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+            <div class="max-w-md text-center sm:text-left">
+                <p class="text-lg text-gray-700 dark:text-gray-300">With a background in Information Systems, I've honed my skills in IT support, network troubleshooting, and data management. Over 4 years of experience in the field, I constantly strive to improve and innovate.</p>
+            </div>
+            <div class="relative w-48 h-48 rounded-full overflow-hidden border-4 border-teal-500 shadow-lg transform hover:scale-105 transition-all duration-300">
+                <img src="https://via.placeholder.com/200" alt="Muhamad Farhansyah" class="w-full h-full object-cover">
+            </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6 bg-white dark:bg-gray-800">
+    <section id="projects" class="py-20 px-8 bg-white dark:bg-gray-800">
         <h2 class="text-3xl font-semibold text-center mb-8">My Projects</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="project-card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
-                <h3 class="text-xl font-bold mb-4">Project 1</h3>
-                <p class="text-gray-700 dark:text-gray-300">A description of the first project. This could be anything from a system setup, networking, to troubleshooting a server.</p>
+            <div class="card bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-xl relative overflow-hidden">
+                <h3 class="text-xl font-semibold mb-4">Project 1</h3>
+                <p class="text-gray-700 dark:text-gray-300">An IT infrastructure setup for a local business. I designed and implemented the network and security systems.</p>
+                <div class="absolute inset-0 bg-teal-500 opacity-25"></div>
             </div>
-            <div class="project-card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
-                <h3 class="text-xl font-bold mb-4">Project 2</h3>
-                <p class="text-gray-700 dark:text-gray-300">This project highlights my graphic design skills or a project involving database management.</p>
+            <div class="card bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-xl relative overflow-hidden">
+                <h3 class="text-xl font-semibold mb-4">Project 2</h3>
+                <p class="text-gray-700 dark:text-gray-300">A project where I created a custom system for inventory management that integrates with cloud storage solutions.</p>
+                <div class="absolute inset-0 bg-teal-500 opacity-25"></div>
             </div>
-            <div class="project-card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
-                <h3 class="text-xl font-bold mb-4">Project 3</h3>
-                <p class="text-gray-700 dark:text-gray-300">An educational project where I integrated technology into learning environments, showcasing my teaching and tech skills.</p>
+            <div class="card bg-gray-200 dark:bg-gray-700 p-6 rounded-lg shadow-xl relative overflow-hidden">
+                <h3 class="text-xl font-semibold mb-4">Project 3</h3>
+                <p class="text-gray-700 dark:text-gray-300">I developed a web-based application for managing online courses and digital classrooms for educational purposes.</p>
+                <div class="absolute inset-0 bg-teal-500 opacity-25"></div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
+    <section id="contact" class="py-20 px-8 bg-gray-100 dark:bg-gray-900">
         <h2 class="text-3xl font-semibold text-center mb-8">Contact</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 text-center">Feel free to reach out to me for any inquiries or collaborations!</p>
-        <div class="text-center mt-6">
+        <p class="text-lg text-gray-700 dark:text-gray-300 text-center mb-8">Feel free to get in touch for inquiries, collaborations, or opportunities!</p>
+        <div class="text-center">
             <p>Email: <a href="mailto:Farhansyah2828@gmail.com" class="text-teal-500">Farhansyah2828@gmail.com</a></p>
             <p>Phone: <a href="tel:+6285710255201" class="text-teal-500">0857-1025-5201</a></p>
         </div>
@@ -105,6 +146,5 @@
     <footer class="py-6 bg-gray-900 text-center text-gray-500">
         <p>&copy; 2025 Muhamad Farhansyah</p>
     </footer>
-
 </body>
 </html>
