@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio Muhamad Farhansyah</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         // Dark mode toggle script
@@ -24,7 +23,7 @@
         };
     </script>
     <style>
-        /* Dark theme background and text color */
+        /* Dark theme styles */
         .dark {
             background-color: #111;
             color: #fff;
@@ -34,6 +33,9 @@
         }
         .dark .project-card {
             background-color: #333;
+        }
+        .dark .hero {
+            background: linear-gradient(45deg, #3b3b3b, #111);
         }
     </style>
 </head>
@@ -54,32 +56,37 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="text-center py-20 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to My Portfolio</h1>
-        <p class="text-lg md:text-xl">I'm Muhamad Farhansyah, an IT Support & Network Technician</p>
+    <section id="hero" class="hero h-screen flex items-center justify-center text-center text-white bg-cover bg-fixed bg-center relative" style="background-image: url('https://via.placeholder.com/1500');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 px-4 md:px-8">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 animate__animated animate__fadeIn">Welcome to My Portfolio</h1>
+            <p class="text-lg md:text-xl animate__animated animate__fadeIn animate__delay-1s">I am Muhamad Farhansyah, an IT Support & Network Technician</p>
+        </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
-        <h2 class="text-3xl font-semibold text-center mb-8">About Me</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">I have a background in Information Systems and over 4 years of experience in IT support, computer & network troubleshooting, and teaching. I'm passionate about technology and always looking for opportunities to learn and grow in the IT field.</p>
+        <div class="text-center">
+            <h2 class="text-3xl font-semibold mb-8">About Me</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">I have a background in Information Systems and over 4 years of experience in IT support, computer & network troubleshooting, and teaching. I am passionate about technology and always looking for opportunities to learn and grow in the IT field.</p>
+        </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6">
-        <h2 class="text-3xl font-semibold text-center mb-8">Projects</h2>
+    <section id="projects" class="py-20 px-6 bg-white dark:bg-gray-800">
+        <h2 class="text-3xl font-semibold text-center mb-8">My Projects</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="project-card p-6 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg hover:bg-teal-500 transition-all duration-300">
+            <div class="project-card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
                 <h3 class="text-xl font-bold mb-4">Project 1</h3>
-                <p class="text-gray-700 dark:text-gray-300">A brief description of the project goes here. It could be a network setup, computer repair, or system troubleshooting.</p>
+                <p class="text-gray-700 dark:text-gray-300">A description of the first project. This could be anything from a system setup, networking, to troubleshooting a server.</p>
             </div>
-            <div class="project-card p-6 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg hover:bg-teal-500 transition-all duration-300">
+            <div class="project-card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
                 <h3 class="text-xl font-bold mb-4">Project 2</h3>
-                <p class="text-gray-700 dark:text-gray-300">This project involves graphic design or data processing. It's a great example of how I can apply IT skills creatively.</p>
+                <p class="text-gray-700 dark:text-gray-300">This project highlights my graphic design skills or a project involving database management.</p>
             </div>
-            <div class="project-card p-6 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg hover:bg-teal-500 transition-all duration-300">
+            <div class="project-card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300">
                 <h3 class="text-xl font-bold mb-4">Project 3</h3>
-                <p class="text-gray-700 dark:text-gray-300">Here I worked on educational tech, integrating digital tools into learning. It’s an example of my ability to combine IT with education.</p>
+                <p class="text-gray-700 dark:text-gray-300">An educational project where I integrated technology into learning environments, showcasing my teaching and tech skills.</p>
             </div>
         </div>
     </section>
@@ -87,7 +94,7 @@
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
         <h2 class="text-3xl font-semibold text-center mb-8">Contact</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 text-center">You can reach me via email or phone for any inquiries or collaborations.</p>
+        <p class="text-lg text-gray-700 dark:text-gray-300 text-center">Feel free to reach out to me for any inquiries or collaborations!</p>
         <div class="text-center mt-6">
             <p>Email: <a href="mailto:Farhansyah2828@gmail.com" class="text-teal-500">Farhansyah2828@gmail.com</a></p>
             <p>Phone: <a href="tel:+6285710255201" class="text-teal-500">0857-1025-5201</a></p>
@@ -98,5 +105,6 @@
     <footer class="py-6 bg-gray-900 text-center text-gray-500">
         <p>&copy; 2025 Muhamad Farhansyah</p>
     </footer>
+
 </body>
 </html>
