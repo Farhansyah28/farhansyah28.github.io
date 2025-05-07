@@ -1,60 +1,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Muhamad Farhansyah - Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #008080;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-    .job {
-      margin-bottom: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio Muhamad Farhansyah</title>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0-alpha.9/dist/tailwind.min.js"></script>
+    <script>
+        // Dark mode toggle script
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark');
+            localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        // On page load, set the theme based on user preference
+        window.onload = function() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.body.classList.add('dark');
+            }
+        };
+    </script>
+    <style>
+        /* Dark theme background and text color */
+        .dark {
+            background-color: #111;
+            color: #fff;
+        }
+        .dark header {
+            border-bottom: 2px solid #444;
+        }
+        .dark .project-card {
+            background-color: #333;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Muhamad Farhansyah</h1>
-    <p>IT Support | Guru TIK | Network Technician</p>
-  </header>
+<body class="bg-white text-black transition-colors duration-500">
+    <!-- Header -->
+    <header class="flex justify-between items-center p-6 border-b-2">
+        <div class="font-bold text-xl">Farhansyah</div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="hover:text-teal-500">About</a></li>
+                <li><a href="#projects" class="hover:text-teal-500">Projects</a></li>
+                <li><a href="#contact" class="hover:text-teal-500">Contact</a></li>
+            </ul>
+        </nav>
+        <button onclick="toggleDarkMode()" class="text-xl">
+            🌙 / 🌞
+        </button>
+    </header>
 
-  <section>
-    <h2>Tentang Saya</h2>
-    <p>Lulusan Sistem Informasi Universitas Pamulang dengan pengalaman lebih dari 4 tahun di bidang IT Support, pengajaran TIK, dan jaringan. Terbiasa menangani troubleshooting perangkat, desain grafis, dan pengajaran teknologi di lingkungan pesantren.</p>
+    <!-- Hero Section -->
+    <section id="hero" class="text-center py-20 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to My Portfolio</h1>
+        <p class="text-lg md:text-xl">I'm Muhamad Farhansyah, an IT Support & Network Technician</p>
+    </section>
 
-    <h2>Pengalaman Kerja</h2>
-    <div class="job">
-      <h3>Teknisi IT – Daar El Manshur (2020–2024)</h3>
-      <p>Perawatan & troubleshooting komputer, jaringan, dan CCTV.</p>
-    </div>
-    <div class="job">
-      <h3>Guru TIK – Daar El Manshur (2020–2024)</h3>
-      <p>Pengajaran teknologi, pemrograman dasar, dan pengolahan data.</p>
-    </div>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
+        <h2 class="text-3xl font-semibold text-center mb-8">About Me</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">I have a background in Information Systems and over 4 years of experience in IT support, computer & network troubleshooting, and teaching. I'm passionate about technology and always looking for opportunities to learn and grow in the IT field.</p>
+    </section>
 
-    <h2>Kontak</h2>
-    <p>Email: Farhansyah2828@gmail.com</p>
-    <p>HP: 0857-1025-5201</p>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <h2 class="text-3xl font-semibold text-center mb-8">Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="project-card p-6 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg hover:bg-teal-500 transition-all duration-300">
+                <h3 class="text-xl font-bold mb-4">Project 1</h3>
+                <p class="text-gray-700 dark:text-gray-300">A brief description of the project goes here. It could be a network setup, computer repair, or system troubleshooting.</p>
+            </div>
+            <div class="project-card p-6 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg hover:bg-teal-500 transition-all duration-300">
+                <h3 class="text-xl font-bold mb-4">Project 2</h3>
+                <p class="text-gray-700 dark:text-gray-300">This project involves graphic design or data processing. It's a great example of how I can apply IT skills creatively.</p>
+            </div>
+            <div class="project-card p-6 bg-gray-200 dark:bg-gray-800 rounded-lg shadow-lg hover:bg-teal-500 transition-all duration-300">
+                <h3 class="text-xl font-bold mb-4">Project 3</h3>
+                <p class="text-gray-700 dark:text-gray-300">Here I worked on educational tech, integrating digital tools into learning. It’s an example of my ability to combine IT with education.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
+        <h2 class="text-3xl font-semibold text-center mb-8">Contact</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 text-center">You can reach me via email or phone for any inquiries or collaborations.</p>
+        <div class="text-center mt-6">
+            <p>Email: <a href="mailto:Farhansyah2828@gmail.com" class="text-teal-500">Farhansyah2828@gmail.com</a></p>
+            <p>Phone: <a href="tel:+6285710255201" class="text-teal-500">0857-1025-5201</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900 text-center text-gray-500">
+        <p>&copy; 2025 Muhamad Farhansyah</p>
+    </footer>
 </body>
 </html>
