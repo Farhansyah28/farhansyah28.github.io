@@ -1,148 +1,511 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio Muhamad Farhansyah</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Dark mode toggle script
-        function toggleDarkMode() {
-            const body = document.body;
-            body.classList.toggle('dark');
-            localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
-        }
-
-        // On page load, set the theme based on user preference
-        window.onload = function() {
-            const theme = localStorage.getItem('theme') || 'light';
-            if (theme === 'dark') {
-                document.body.classList.add('dark');
-            }
-        };
-    </script>
-    <style>
-        /* Dark theme styles */
-        .dark {
-            background-color: #111;
-            color: #fff;
-        }
-        .dark header {
-            border-bottom: 2px solid #444;
-        }
-        .dark .project-card {
-            background-color: #333;
-        }
-        .dark .hero {
-            background: linear-gradient(45deg, #3b3b3b, #111);
-        }
-
-        /* Custom styles */
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        /* About Section Styles */
-        .about-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .about-img:hover {
-            transform: scale(1.1);
-        }
-
-        /* Shape for visual accents */
-        .shape {
-            position: absolute;
-            width: 70%;
-            height: 70%;
-            background-color: #fff;
-            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-            top: -10%;
-            left: 15%;
-            opacity: 0.1;
-        }
-
-        .shape-two {
-            position: absolute;
-            width: 60%;
-            height: 60%;
-            background-color: #fff;
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-            top: 50%;
-            right: -10%;
-            opacity: 0.15;
-        }
-    </style>
+    <title>Portfolio Farhansyah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-white text-black transition-colors duration-500">
+
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Farhansyah</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
     <!-- Hero Section -->
-    <section id="hero" class="hero relative h-screen flex justify-center items-center text-center px-6 py-12 bg-gradient-to-r from-black to-gray-900">
-        <div class="shape"></div>
-        <div class="shape-two"></div>
-        <div class="relative z-10 text-white">
-            <h1 class="text-5xl font-extrabold mb-4 animate__animated animate__fadeIn">Muhamad Farhansyah</h1>
-            <p class="text-xl mb-4 animate__animated animate__fadeIn animate__delay-1s">IT Support & Network Technician</p>
-            <a href="#about" class="text-xl font-semibold bg-teal-500 hover:bg-teal-600 text-white py-3 px-6 rounded-full transition-all duration-300">Explore My Work</a>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Hi, I'm <span>Muhamad Farhansyah</span></h2>
+                <h3>IT Support | Junior Web Developer | ICT Teacher | Data Entry</h3>
+                <p>Creating digital solutions and teaching technology with passion</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+            <div class="hero-image">
+                <img src="./assets/images/profile.png" alt="Profile Picture">
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-8 bg-gray-100 dark:bg-gray-900 relative">
-        <h2 class="text-3xl font-semibold text-center mb-8">About Me</h2>
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
-            <div class="lg:w-1/2 w-full text-center lg:text-left">
-                <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                    Hi, I'm Muhamad Farhansyah. I have a background in **Information Systems** from Universitas Pamulang, and I have spent the past 4 years working as an IT Support/Computer & Network Technician, as well as teaching ICT and Social Studies. 
-                </p>
-                <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                    I am passionate about technology, especially in networking, system troubleshooting, and IT management. I also enjoy teaching and sharing my knowledge with others, which has helped me grow both personally and professionally.
-                </p>
-                <p class="text-lg text-gray-700 dark:text-gray-300">
-                    I am always looking for new challenges and opportunities to improve my skills. Whether it's solving complex network issues or helping individuals understand technology, I thrive in environments where I can learn and grow.
-                </p>
-            </div>
-            <div class="relative w-48 h-48 rounded-full overflow-hidden border-4 border-teal-500 shadow-lg transform hover:scale-105 transition-all duration-300 mt-8 lg:mt-0">
-                <img src="https://via.placeholder.com/200" alt="Muhamad Farhansyah" class="about-img">
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Lulusan Sistem Informasi Universitas Pamulang dengan IPK 3.66, memiliki pengalaman lebih dari 4
+                        tahun di bidang IT
+                        Support, Infrastruktur Jaringan, dan Pendidikan. Mahir dalam perakitan dan troubleshooting
+                        komputer, instalasi sistem
+                        operasi, manajemen jaringan, serta dokumentasi aset IT.</p>
+                    <div class="about-info">
+                        <div>
+                            <span>Name:</span>Muhamad Farhansyah
+                        </div>
+                        <div>
+                            <span>Email:</span>farhansyah2828@gmail.com
+                        </div>
+                        <div>
+                            <span>From:</span>Tangerang Selatan, Indonesia
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="4">0</span>+
+                        <span class="stat-text">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="1">0</span>+
+                        <span class="stat-text">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="100">0</span>+
+                        <span class="stat-text">Students Taught</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="30">0</span>+
+                        <span class="stat-text">Computer/Laptop Fixed</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- My Projects Section -->
-    <section id="projects" class="py-20 px-8 bg-white dark:bg-gray-800">
-        <h2 class="text-3xl font-semibold text-center mb-8">My Projects</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-            <div class="card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-xl relative overflow-hidden">
-                <h3 class="text-xl font-semibold mb-4">Project 1</h3>
-                <p class="text-gray-700 dark:text-gray-300">This project focused on setting up a secure IT infrastructure for a local business. I handled everything from the network setup to configuring firewalls and ensuring secure communications.</p>
-                <div class="absolute inset-0 bg-teal-500 opacity-25"></div>
+    <!-- Skills Section -->
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+                <!-- IT Support Skills -->
+                <div class="skill-category">
+                    <h3>IT Support</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Troubleshooting Hardware/Software</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Instalasi & Konfigurasi OS</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Manajemen Jaringan</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Dokumentasi & Manajemen Aset IT</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development Skills -->
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>HTML/CSS</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>PHP</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="65"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>MySQL</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Teaching Skills -->
+                <div class="skill-category">
+                    <h3>ICT Teaching</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Penyusunan RPP & Modul</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Presentasi dan Komunikasi</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Penggunaan Media Interaktif</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Pendampingan Karakter & Akademik</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Entry Skills -->
+                <div class="skill-category">
+                    <h3>Data Entry</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Microsoft Excel & Google Sheets</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Dokumentasi Digital</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Input Data Akurat</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Pembersihan & Format Data</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tambahkan ini di dalam <div class="skills-container"> -->
+                <div class="skill-category">
+                    <h3>Foto & Videografi</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Fotografi</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Videografi Dasar</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Editing Video (Premiere Pro/CapCut)</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="70"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-xl relative overflow-hidden">
-                <h3 class="text-xl font-semibold mb-4">Project 2</h3>
-                <p class="text-gray-700 dark:text-gray-300">A complete system setup for a cloud-based inventory management system, ensuring smooth data flow and reliable backups. The system integrates with multiple cloud storage platforms.</p>
-                <div class="absolute inset-0 bg-teal-500 opacity-25"></div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <!-- Ganti seluruh section portfolio dengan ini -->
+    <section id="portfolio" class="portfolio-pdf">
+        <div class="container">
+            <h2 class="section-title">My Portfolio</h2>
+            <div class="pdf-download-container">
+                <a href="https://drive.google.com/file/d/1V10eqODPw182O4zDyxT2MiKNpmfaqtaw/view?usp=sharing"
+                    target="_blank" class="pdf-link">
+                    <!-- Ganti <img> dengan ini -->
+                    <i class="fas fa-file-pdf pdf-fa-icon"></i>
+
+                    <style>
+                        .pdf-fa-icon {
+                            font-size: 80px;
+                            color: #000000;
+                            margin-bottom: 15px;
+                        }
+                    </style>
+                    <span>View Full Portfolio PDF</span>
+                </a>
+                <p class="pdf-note">Klik logo di atas untuk membuka portfolio lengkap dalam format PDF</p>
             </div>
-            <div class="card p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-xl relative overflow-hidden">
-                <h3 class="text-xl font-semibold mb-4">Project 3</h3>
-                <p class="text-gray-700 dark:text-gray-300">Created a custom web application to help teachers manage digital classrooms, handle assignments, and monitor student progress. Integrated with various tools for easy content creation.</p>
-                <div class="absolute inset-0 bg-teal-500 opacity-25"></div>
+        </div>
+    </section>
+
+    <!-- Tambahkan section baru setelah Experience -->
+    <!-- Education & Certification Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education & Certification</h2>
+
+            <!-- Education -->
+            <div class="education-item">
+                <h3>Universitas Pamulang</h3>
+                <p>Manajemen Sistem Informasi</p>
+                <p>Lulus: Februari 2025 | IPK: 3.66</p>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certification-container">
+
+                <!-- Certification 1 -->
+                <div class="certification-item">
+                    <h3>Basic Data</h3>
+                    <p>Myskill.id | 2025</p>
+                    <div class="certificate-image">
+                        <img src="./assets/images/basicdata.jpg" alt="Basic Data Certificate" class="certificate-img">
+                        <a href="basic-data-certificate.jpg" target="_blank" class="zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="certification-item">
+                    <h3>Memulai Pemrograman dengan Java</h3>
+                    <p>Dicoding | 2024</p>
+                    <div class="certificate-image">
+                        <img src="./assets/images/Java.jpg" alt="Java Programming Certificate" class="certificate-img">
+                        <a href="java-certificate.jpg" target="_blank" class="zoom-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Add more certifications as needed -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">My Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Mei 2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>IT Infrastructure</h3>
+                        <h4>OneSmartServices</h4>
+                        <p>Sedang menjalankan tugas sebagai IT Infrastructure.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Feb 2025 - Mei 2025</div>
+                    <div class="timeline-content">
+                        <h3>IT Team</h3>
+                        <h4>Yayasan Satriabudi Dharma Setia (YSDS)</h4>
+                        <ul>
+                            <li>Konfigurasi sistem dan perangkat</li>
+                            <li>Troubleshooting & dukungan teknis</li>
+                            <li>Pengelolaan perangkat jaringan</li>
+                            <li>Pendataan dan dokumentasi IT</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2024 - Feb 2025</div>
+                    <div class="timeline-content">
+                        <h3>Kurir</h3>
+                        <h4>Surface Shoe Care</h4>
+                        <ul>
+                            <li>Pengiriman sepatu dengan pelayanan optimal</li>
+                            <li>Dokumentasi kondisi barang</li>
+                            <li>Komunikasi dengan pelanggan</li>
+                            <li>Koordinasi dengan tim layanan</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mei 2020 - Jun 2024</div>
+                    <div class="timeline-content">
+                        <h3>Tenaga Pengajar & IT Support Technician</h3>
+                        <h4>Pondok Pesantren Daar El Manshur</h4>
+                        <p><strong>Tenaga Pengajar:</strong></p>
+                        <ul>
+                            <li>Mengajar, membimbing santri, menyusun RPP</li>
+                            <li>Mendukung kegiatan akademik dan karakter</li>
+                        </ul>
+                        <p><strong>IT Support Technician:</strong></p>
+                        <ul>
+                            <li>Perawatan perangkat, instalasi & troubleshooting software</li>
+                            <li>Manajemen jaringan, dukungan teknis</li>
+                        </ul>
+                        <p><strong>Graphic Designer:</strong></p>
+                        <ul>
+                            <li>Mendesain materi promosi dan pembelajaran</li>
+                            <li>Kolaborasi tim media</li>
+                            <li>Penggunaan Photoshop/Canva/CorelDRAW</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Me</h3>
+
+                    <!-- Email -->
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:farhansyah2828@gmail.com" class="contact-link">farhansyah2828@gmail.com</a>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/6285710255201" target="_blank" class="contact-link">+62 857-1025-5201</a>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/boangxo/" target="_blank" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/farhansyah2828/" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:farhansyah2828@gmail.com" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/6285710255201" target="_blank" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form class="contact-form">
+                    <!-- Form fields remain the same -->
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-6 bg-gray-900 text-center text-gray-500">
-        <p>&copy; 2025 Muhamad Farhansyah</p>
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Farhansyah. All Rights Reserved.</p>
+        </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Files -->
+    <script src="script.js"></script>
 </body>
+
 </html>
