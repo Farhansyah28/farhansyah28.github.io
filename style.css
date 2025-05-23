@@ -790,3 +790,110 @@ footer {
     padding: 20px;
   }
 }
+/* ===== Mobile Responsive Fixes ===== */
+@media (max-width: 768px) {
+  /* Header */
+  header .container {
+    padding: 15px;
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: auto;
+    padding: 80px 0 40px;
+    text-align: center;
+  }
+
+  .hero .container {
+    flex-direction: column-reverse;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  .hero-image img {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  /* About Section */
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+
+  /* Skills Section */
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Timeline Experience */
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content,
+  .timeline-item:nth-child(odd) .timeline-content {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+  }
+
+  .timeline-date {
+    left: 30px;
+    transform: none;
+  }
+
+  /* Contact Form */
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info {
+    margin-bottom: 40px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* Perbaikan khusus untuk layar sangat kecil */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .certificate-image {
+    margin: 15px auto;
+  }
+}
